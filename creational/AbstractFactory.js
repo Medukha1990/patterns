@@ -75,10 +75,10 @@ class AudiSportCar extends AbstractSportCar {
 const testing = (Factory, premiumCarName, sportCarName) => {
     const concreteFactory = new Factory();
     const concretePremiumCar = concreteFactory.createPremiumCar(premiumCarName);
-    const concreteSportCar = concreteFactory.createSportCar(sportCarName)
+    const concreteSportCar = concreteFactory.createSportCar(sportCarName);
 
     console.log(concreteFactory, concretePremiumCar, concreteSportCar);
 };
 
-testing(ToyotaFactory, 'Camry', 'Supra')
-testing(AudiFactory, 'A8', 'TT')
+testing(ToyotaFactory, 'Camry', 'Supra');
+testing(AudiFactory, 'A8', 'TT');
