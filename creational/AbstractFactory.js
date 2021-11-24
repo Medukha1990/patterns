@@ -1,25 +1,27 @@
+import { carType, cars } from './helpers/constants';
+
 class AbstractCarFactory {
     createPremiumCar(product) {
         return new AbstractPremiumCar(product);
-    }
+    };
 
     createSportCar(product) {
         return new AbstractSportCar(product);
-    }
+    };
 }
 
 class AbstractPremiumCar {
     constructor(model) {
-        this.type = 'Premium car';
+        this.type = carType.PREMIUM_CAR;
         this.model = model;
-    }
+    };
 }
 
 class AbstractSportCar {
     constructor(model) {
-        this.type = 'sport car';
+        this.type = carType.SPORT_CAR;
         this.model = model;
-    }
+    };
 }
 
 // Toyota
@@ -27,23 +29,23 @@ class AbstractSportCar {
 class ToyotaFactory extends AbstractCarFactory {
     createPremiumCar(model) {
         return new ToyotaPremiumCar(model);
-    }
+    };
 
     createSportCar(model) {
         return new ToyotaSportCar(model);
-    }
+    };
 }
 
 class ToyotaPremiumCar extends AbstractPremiumCar {
     constructor(model) {
         super(model);
-    }
+    };
 }
 
 class ToyotaSportCar extends AbstractSportCar {
     constructor(model) {
         super(model);
-    }
+    };
 }
 
 // Audi
@@ -51,23 +53,23 @@ class ToyotaSportCar extends AbstractSportCar {
 class AudiFactory extends AbstractCarFactory {
     createPremiumCar(model) {
         return new AudiPremiumCar(model);
-    }
+    };
 
     createSportCar(model) {
         return new AudiSportCar(model);
-    }
+    };
 }
 
 class AudiPremiumCar extends AbstractPremiumCar {
     constructor(model) {
         super(model);
-    }
+    };
 }
 
 class AudiSportCar extends AbstractSportCar {
     constructor(model) {
         super(model);
-    }
+    };
 }
 
 // testing
@@ -80,5 +82,5 @@ const testing = (Factory, premiumCarName, sportCarName) => {
     console.log(concreteFactory, concretePremiumCar, concreteSportCar);
 };
 
-testing(ToyotaFactory, 'Camry', 'Supra');
-testing(AudiFactory, 'A8', 'TT');
+testing(ToyotaFactory, cars.TOYOTA.CAMRY, cars.TOYOTA.SUPRA);
+testing(AudiFactory, cars.AUDI.A8, cars.AUDI.TT);
