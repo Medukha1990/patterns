@@ -19,3 +19,18 @@ export const cars = {
         'TT': 'TT',
     },
 };
+
+export const tests = {
+    'TEST_1' : 'test 1',
+    'TEST_2' : 'test 2',
+};
+
+export const forProto = {
+    'OPTION_1' : 'option 1',
+    'OPTION_2' : 'option 2',
+    'OPTION_3' : 'option 3',
+    'VALUE_1' : '1',
+    'VALUE_2' : '2',
+    'VALUE_3' : '3',
+
+}

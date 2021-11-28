@@ -1,3 +1,5 @@
+import { tests } from "./helpers/constants";
+
 class Singleton {
     constructor(data) {
         if (Singleton.instance) {
@@ -12,12 +14,12 @@ class Singleton {
 }
 
 const testing = () => {
-    const a = new Singleton('test1');
-    const b = new Singleton('test2');
+    const a = new Singleton(tests.TEST_1);
+    const b = new Singleton(tests.TEST_2);
 
     if (a === b) {
         console.log('Singleton is working, the one copy');
     }
 };
 
-testing()
+testing();
